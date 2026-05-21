@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, TrendingUp, Sun, Moon } from 'lucide-react';
 import CryptoCard from './components/CryptoCard';
+import SearchBar from './components/SearchBar';
 
 export default function App() {
   const [coins, setCoins] = useState([]);
@@ -32,15 +33,7 @@ export default function App() {
       </header>
 
       {/* Search Bar */}
-      <div className='relative mb-6 max-w-md'>
-        <Search className='absolute left-3 top-3 text-gray-400' size={18} />
-        <input
-          type='text'
-          placeholder='Search crypto...'
-          className='w-full pl-10 pr-4 py-2 rounded-lg border bg-transparent border-gray-700 focus:outline-none focus:border-green-500'
-          onChange={e => setSearch(e.target.value)}
-        />
-      </div>
+      <SearchBar setSearch={setSearch} />
 
       {/* Grid Display */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
