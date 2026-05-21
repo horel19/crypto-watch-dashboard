@@ -31,26 +31,25 @@ Follow these steps to run the project locally:
 1. **Clone the repository**
    
 <!-- ```bash
-   git clone [https://github.com/horel19/crypto-dashboard.git](https://github.com/horel19/crypto-dashboard.git)
-
+git clone [https://github.com/horel19/crypto-dashboard.git](https://github.com/horel19/crypto-dashboard.git)
 ``` -->
 
 2. **Navigate into the directory:**
 
-```bash
-   cd crypto-dashboard
-```
+<!-- ```bash
+cd crypto-watch-dashboard
+``` -->
 
 3. **Install dependencies:**
 
 ```bash
-   npm install
+npm install
 ```
 
 4. **Start the development server:**
 
 ```bash
-   npm run dev
+npm run dev
 ```
 
 Open `http://localhost:5173` in your browser to view the application.
