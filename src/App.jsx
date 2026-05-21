@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Search, TrendingUp, Sun, Moon } from 'lucide-react';
 import CryptoCard from './components/CryptoCard';
 import SearchBar from './components/SearchBar';
+import HeaderPanel from './components/HeaderPanel';
 
 export default function App() {
   const [coins, setCoins] = useState([]);
@@ -23,24 +23,17 @@ export default function App() {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} p-6`}>
-      <header className='flex justify-between items-center mb-8'>
-        <h1 className='text-2xl font-bold flex items-center gap-2'>
-          <TrendingUp className='text-green-500' /> Crypto Watch
-        </h1>
-        <button onClick={() => setDarkMode(!darkMode)} className='p-2 rounded-full hover:bg-gray-700'>
-          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-      </header>
+      
+      <HeaderPanel darkMode={darkMode} setDarkMode={setDarkMode} />
 
-      {/* Search Bar */}
       <SearchBar setSearch={setSearch} />
 
-      {/* Grid Display */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {filteredCoins.map(coin => (
           <CryptoCard key={coin.id} coin={coin} />
         ))}
       </div>
+
     </div>
   );
 }
